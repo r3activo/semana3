@@ -1,1 +1,21 @@
-
+Object.prototype.reducir = function (fn, inicio) {
+    let keys = Object.keys(this);
+    let fin = keys.length;
+    var result = inicio;
+    let dato;
+    for ( let i = 0; i < fin; i++ ) {
+        result = fn( result, this[ keys[i] ] );
+    }
+    return result;
+};
+    
+let datos = Array(1,2,3); 
+//let datos = { uno:1, dos: 2, tres: 3}; 
+    
+    
+function reductor (total, num){
+    return total * num; 
+}
+    
+let result = datos.reducir(reductor, 1);
+console.log(result);

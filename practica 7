@@ -1,1 +1,15 @@
-
+Object.prototype.incremento = function (fn) {
+    let keys = Object.keys(this);
+    let fin = keys.length;
+    let result = new Array();
+    for ( let i = 0; i < fin; i++ ) {
+        this[ keys[i] ] += 1;
+    }
+    return this;
+};
+    
+let datos = Array(1,2,3,4); 
+//let datos = { uno:1, dos: 2, tres: 3, cuatro: 4}; 
+    
+let result = datos.incremento();
+console.log(result);

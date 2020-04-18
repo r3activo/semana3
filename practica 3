@@ -1,1 +1,22 @@
-
+Object.prototype.filtrar = function (fn) {
+    let keys = Object.keys(this);
+    let fin = keys.length;
+    let datos = Array();
+    let dato;
+    for ( let i = 0; i < fin; i++ ) {
+        dato = fn( this[ keys[i] ] );
+        if( dato != false ) datos.push( this[ keys[i] ] );
+    }
+    return datos;
+};
+    
+let datos = Array('uno','dos','tres'); 
+//let datos = { uno:'uno', dos: 'dos', tres: 'tres'}; 
+    
+    
+function filtrado (dato){
+    return dato.length == 3; 
+}
+    
+let result = datos.filtrar(filtrado);
+console.log(result);

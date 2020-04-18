@@ -28,10 +28,9 @@ Object.prototype.for_Each = function (objeto, fn) {
     }
 };
     
-
-//let objeto = Array('uno','dos','tres'); 
-let objeto = { uno:'uno', dos: 'dos', tres: 'tres'}; 
+let objeto = Array('uno','dos','tres'); 
+//let objeto = { uno:'uno', dos: 'dos', tres: 'tres'}; 
     
-objeto.for_Each(objeto ,function(dato) {
+Object.for_Each(objeto ,function(dato) {
     console.log(dato);
 })

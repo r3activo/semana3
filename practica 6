@@ -1,1 +1,36 @@
-
+Object.prototype.condicional = function (condicion , verdad, falso) {
+    let result = 0;
+    if ( condicion ) {
+        result = verdad( this );
+    } else {
+        result = falso( this );
+    }
+    return result;
+};
+    
+function total (dato){
+    let keys = Object.keys(dato);
+    let result = 0;
+    let fin = keys.length;
+    for ( let i = 0; i < fin; i++ ) {
+        result += dato[ keys[i] ];
+    }
+    return result;
+}
+    
+function promedio (dato){
+    let keys = Object.keys(dato);
+    let result = 0;
+    let fin = keys.length;
+    for ( let i = 0; i < fin; i++ ) {
+        result += dato[ keys[i] ];
+    }
+    return result/fin;
+}
+    
+//let datos = Array(1,2,3,4); 
+let datos = { uno:1, dos: 2, tres: 3, cuatro: 4 }; 
+    
+    
+let result = datos.condicional( true, total, promedio );
+console.log(result);

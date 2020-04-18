@@ -1,1 +1,14 @@
+const for_Each = function (objeto, fn) {
+    let keys = Object.keys(objeto);
+    let fin = keys.length;
+    for ( let i = 0; i < fin; i++ ) {
+        fn( objeto[ keys[i] ] );
+    }
+}
 
+let objeto = Array('uno','dos','tres'); 
+//let objeto = { uno:'uno', dos: 'dos', tres: 'tres'}; 
+
+for_Each(objeto ,function(dato) {
+    console.log(dato);
+});

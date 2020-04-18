@@ -1,1 +1,14 @@
-
+Object.prototype.mapear = function (fn) {
+    let keys = Object.keys(this);
+    let fin = keys.length;
+    for ( let i = 0; i < fin; i++ ) {
+        fn( this[ keys[i] ] );
+    }
+};
+    
+//let objeto = Array('uno','dos','tres'); 
+let array = { uno:'uno', dos: 'dos', tres: 'tres'}; 
+    
+array.mapear(campo=>{
+    console.log( 'campo: ' + campo );
+})

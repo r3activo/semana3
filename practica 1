@@ -12,3 +12,23 @@ let objeto = Array('uno','dos','tres');
 for_Each(objeto ,function(dato) {
     console.log(dato);
 });
+
+//con prototype
+
+const for_Each = function (objeto, fn) {
+    let keys = Object.keys(objeto);
+    let fin = keys.length;
+    for ( let i = 0; i < fin; i++ ) {
+        fn( objeto[ keys[i] ] );
+    }
+}
+
+Object.prototype.for_Each = for_Each;
+    
+
+//let objeto = Array('uno','dos','tres'); 
+let objeto = { uno:'uno', dos: 'dos', tres: 'tres'}; 
+    
+objeto.for_Each(objeto ,function(dato) {
+    console.log(dato);
+})

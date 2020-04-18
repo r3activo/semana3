@@ -1,1 +1,19 @@
-
+Object.prototype.petencias = function (fn) {
+    let keys = Object.keys(this);
+    let fin = keys.length;
+    let result = new Array();
+    for ( let i = 0; i < fin; i++ ) {
+        result.push( { 
+            base: this[ keys[i] ] , 
+            cuadrado:  Math.pow(this[ keys[i] ], 2), 
+            cubo:  Math.pow(this[ keys[i] ], 3) } 
+        );
+    }
+    return result;
+};
+    
+//let datos = Array(1,2,3,4); 
+let datos = { uno:1, dos: 2, tres: 3, cuatro: 4}; 
+    
+let result = datos.petencias();
+console.log(result);
